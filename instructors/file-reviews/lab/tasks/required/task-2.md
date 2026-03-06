@@ -86,15 +86,15 @@ No issues found.
 
 ### 4.1. Instructions wording
 
-1. **Line 41.** "Base it on the latest version on `main` and name it appropriately." — compound instruction ("base it… and name it…"). Convention: "Never write 'Do A and do B.' Instead, split into two numbered steps."
-2. **Line 43.** "Do you remember the advice from Task 1?" — rhetorical question, not an actionable instruction. Convention: instructions should be concrete actions.
-3. **Line 252.** "Open `Swagger UI` at `http://<your-vm-ip-address>:42002/docs`. Authorize with your `API_KEY`." — compound instruction (open and authorize).
+1. **[Fixed]** ~~**Line 41.** "Base it on the latest version on `main` and name it appropriately." — compound instruction ("base it… and name it…"). Convention: "Never write 'Do A and do B.' Instead, split into two numbered steps."~~
+2. **[Fixed]** ~~**Line 43.** "Do you remember the advice from Task 1?" — rhetorical question, not an actionable instruction. Convention: instructions should be concrete actions.~~
+3. **[Fixed]** ~~**Line 252.** "Open `Swagger UI` at `http://<your-vm-ip-address>:42002/docs`. Authorize with your `API_KEY`." — compound instruction (open and authorize).~~
 
 ### 4.2. Terminal commands
 
-1. **Lines 232–236.** `git push -u origin <task-branch>` — preceded by "Push your task branch:" instead of the required "To <intention>," pattern. Also missing the `[run in the \`VS Code Terminal\`](...)` wiki link.
-2. **Lines 241–248.** `cd se-toolkit-lab-5 && git fetch… && docker compose…` — preceded by "On your VM, pull your branch and restart the services:" instead of "To <intention>," pattern. Missing the wiki link.
-3. **Lines 210–214** (inside troubleshooting). `uv run pytest …::TestScores -v` — preceded by "Run a single test class to focus on one endpoint:" instead of "To <intention>," pattern. Missing the wiki link.
+1. **[Fixed]** ~~**Lines 232–236.** `git push -u origin <task-branch>` — preceded by "Push your task branch:" instead of the required "To <intention>," pattern. Also missing the `[run in the \`VS Code Terminal\`](...)` wiki link.~~
+2. **[Fixed]** ~~**Lines 241–248.** `cd se-toolkit-lab-5 && git fetch… && docker compose…` — preceded by "On your VM, pull your branch and restart the services:" instead of "To <intention>," pattern. Missing the wiki link.~~
+3. **[Fixed]** ~~**Lines 210–214** (inside troubleshooting). `uv run pytest …::TestScores -v` — preceded by "Run a single test class to focus on one endpoint:" instead of "To <intention>," pattern. Missing the wiki link.~~
 
 ### 4.3. Command Palette commands
 
@@ -118,12 +118,12 @@ No issues found.
 
 ### 4.8. Links and cross-references
 
-1. **Line 37.** Step 1.1 heading mentions `Git workflow` but the step body has no link to the Git workflow wiki page. The template requires `Follow the [\`Git workflow\`](../../../wiki/git-workflow.md) to complete this task.`
-2. **Line 252.** `Swagger UI` is backticked but not linked to a wiki section on first mention in this section (if a swagger wiki page exists).
+1. **[Fixed]** ~~**Line 37.** Step 1.1 heading mentions `Git workflow` but the step body has no link to the Git workflow wiki page. The template requires `Follow the [\`Git workflow\`](../../../wiki/git-workflow.md) to complete this task.`~~
+2. **[Fixed]** ~~**Line 252.** `Swagger UI` is backticked but not linked to a wiki section on first mention in this section (if a swagger wiki page exists).~~
 
 ### 4.9. Notes, tips, warnings
 
-1. **Lines 59–61.** `> [!NOTE]` is indented inside a list item (under step 1 of section 1.2). Convention: "Do not indent alerts. GitHub-flavored Markdown alerts do not render correctly when indented."
+1. **[Fixed]** ~~**Lines 59–61.** `> [!NOTE]` is indented inside a list item (under step 1 of section 1.2). Convention: "Do not indent alerts. GitHub-flavored Markdown alerts do not render correctly when indented."~~
 
 ### 4.10. Images
 
@@ -159,13 +159,13 @@ No issues found.
 
 ### 4.18. Inline formatting of technical terms
 
-1. **Line 9.** "SQL aggregation queries" — `SQL` is a language name and should be backticked: `` `SQL` ``. Convention lists `` `SQL` `` explicitly.
-2. **Line 92.** "an SQL aggregation query" — same issue.
-3. **Line 254.** "a JSON array" — `JSON` is a format name and should be backticked: `` `JSON` ``. Convention lists `` `JSON` `` explicitly.
-4. **Line 271.** "a JSON array of 4 bucket objects" — same issue.
-5. **Line 272.** "a JSON array of task objects" — same issue.
-6. **Line 273.** "a JSON array of date objects" — same issue.
-7. **Line 274.** "a JSON array of group objects" — same issue.
+1. **[Fixed]** ~~**Line 9.** "SQL aggregation queries" — `SQL` is a language name and should be backticked: `` `SQL` ``. Convention lists `` `SQL` `` explicitly.~~
+2. **[Fixed]** ~~**Line 92.** "an SQL aggregation query" — same issue.~~
+3. **[Fixed]** ~~**Line 254.** "a JSON array" — `JSON` is a format name and should be backticked: `` `JSON` ``. Convention lists `` `JSON` `` explicitly.~~
+4. **[Fixed]** ~~**Line 271.** "a JSON array of 4 bucket objects" — same issue.~~
+5. **[Fixed]** ~~**Line 272.** "a JSON array of task objects" — same issue.~~
+6. **[Fixed]** ~~**Line 273.** "a JSON array of date objects" — same issue.~~
+7. **[Fixed]** ~~**Line 274.** "a JSON array of group objects" — same issue.~~
 
 ### 4.19. Steps with sub-steps
 
@@ -181,7 +181,7 @@ No issues found. Line 248 includes `--build`.
 
 ### 4.22. Environment variable references
 
-1. **Line 252.** `API_KEY` is referenced in prose but not linked to its wiki section and source `.env.*.secret` file, as required by the convention.
+1. **[Fixed]** ~~**Line 252.** `API_KEY` is referenced in prose but not linked to its wiki section and source `.env.*.secret` file, as required by the convention.~~
 
 ### 4.23. Horizontal rules
 
@@ -201,14 +201,14 @@ Not applicable (placeholder is used, not an example IP).
 
 ### Section 1. Task document template (tasks.md)
 
-1. **Line 37.** Step 1.1 heading says "Follow the usual `Git workflow`" — "usual" is not in the template. Template heading is "Follow the `Git workflow`".
-2. **Lines 37–43.** Step 1.1 body does not match the template. Missing: `Follow the [\`Git workflow\`](../../../wiki/git-workflow.md) to complete this task.` Instead contains issue title, branch guidance, and a rhetorical question.
-3. **Missing step 1.2.** The template requires step 1.2 to be "Create a `Lab Task` issue" (key rule: "Step 1.2 is always 'Create an issue'"). Issue creation is merged into step 1.1. All subsequent step numbers are off by one.
+1. **[Fixed]** ~~**Line 37.** Step 1.1 heading says "Follow the usual `Git workflow`" — "usual" is not in the template. Template heading is "Follow the `Git workflow`".~~
+2. **[Fixed]** ~~**Lines 37–43.** Step 1.1 body does not match the template. Missing: `Follow the [\`Git workflow\`](../../../wiki/git-workflow.md) to complete this task.` Instead contains issue title, branch guidance, and a rhetorical question.~~
+3. **[Fixed]** ~~**Missing step 1.2.** The template requires step 1.2 to be "Create a `Lab Task` issue" (key rule: "Step 1.2 is always 'Create an issue'"). Issue creation is merged into step 1.1. All subsequent step numbers are off by one.~~
 
 ### Section 4.18. Step checkpoints (tasks.md)
 
-1. **Lines 82–86.** Expected output in step 1.3 is numbered as a separate step (step 3) instead of being indented under the action step (step 2). Convention: "Checkpoints are part of the step, not separate steps."
-2. **Lines 198–201.** Expected output in step 1.5 is numbered as a separate step (step 2) instead of being indented under the action step (step 1). Same violation.
+1. **[Fixed]** ~~**Lines 82–86.** Expected output in step 1.3 is numbered as a separate step (step 3) instead of being indented under the action step (step 2). Convention: "Checkpoints are part of the step, not separate steps."~~
+2. **[Fixed]** ~~**Lines 198–201.** Expected output in step 1.5 is numbered as a separate step (step 2) instead of being indented under the action step (step 1). Same violation.~~
 
 ---
 
@@ -231,7 +231,7 @@ No empty sections found.
 | Conceptual — High | 1 |
 | Conceptual — Medium | 5 |
 | Conceptual — Low | 3 |
-| Convention violations | 18 |
+| Convention violations | 18 (all fixed) |
 | TODOs | 0 |
 | Empty sections | 0 |
 | **Total** | **27** |
