@@ -1,6 +1,6 @@
 # Review: `lab/tasks/required/task-3.md`
 
-- **Date:** 2026-03-07
+- **Date:** 2026-03-10
 - **Convention files used:**
   - `contributing/conventions/writing/tasks.md` — task structure, design principles, conceptual review dimensions (D1–D12)
   - `contributing/conventions/writing/common.md` — writing conventions (4.1–4.26)
@@ -11,13 +11,11 @@
 
 ### D1. Learning objective clarity
 
-1. **[Low]** Line 9 (Purpose): The Purpose contains two objectives joined with "and": "Add charts to the front-end to visualize the analytics data from Task 2, **and** learn to integrate a chart library into a React application." A single, concrete learning outcome is preferred.
-   - **Suggested fix:** Pick one outcome, e.g., "Learn to integrate a chart library into a React application to visualize analytics data."
+No issues found.
 
 ### D2. Step-by-step completeness
 
-1. **[Medium]** Lines 114–122 (step 1.5): The step says "Update `frontend/src/App.tsx` to include navigation" but provides only vague bullet-point suggestions, not concrete step-by-step instructions. A beginner may not know how to implement this without AI assistance.
-   - **Suggested fix:** Provide a concrete code snippet or placeholder template showing the state variable, navigation buttons, and conditional rendering. Alternatively, give an exact AI prompt as done in step 1.4.
+1. **[Low]** Line 85: "Open the [coding agent](...) in the `frontend/` directory" — the phrase "in the `frontend/` directory" is ambiguous (working directory vs. target directory). The wiki link points to `#what-is-a-coding-agent` (concept definition) rather than an operational section like `#open-a-chat-with-qwen-code`. Suggest: link to the operational wiki section and clarify the working directory context.
 
 ### D3. Student navigation
 
@@ -25,17 +23,8 @@ No issues found.
 
 ### D4. Checkpoints and feedback loops
 
-1. **[Medium]** Step 1.3 (lines 44–68): No checkpoint after installing the chart library. Students have no way to verify the install succeeded.
-   - **Suggested fix:** Add expected output after `npm install` (e.g., "You should see output similar to: `added N packages`") or a verification command like `npm ls chart.js`.
-
-2. **[Medium]** Step 1.5 (lines 114–122): No checkpoint after adding navigation. Students don't verify that navigation works until step 1.7, two steps later. A silent mistake here propagates.
-   - **Suggested fix:** Add a brief checkpoint such as "You will verify navigation works in step 1.7" or provide an intermediate checkpoint.
-
-3. **[Low]** Step 1.6 (lines 137–143): No expected output shown for a successful `npm run typecheck`. Students unfamiliar with `TypeScript` may not know what "passing" looks like.
-   - **Suggested fix:** After step 2, add: "If there are no type errors, the command produces no output and exits silently."
-
-4. **[Medium]** Step 1.9, line 248 (item 6): "Verify the Dashboard page shows charts" is a checkpoint worded as a numbered step. Per convention 4.18, checkpoints should be indented under the action step they verify, not numbered as separate steps.
-   - **Suggested fix:** Replace step 6 with a navigation action ("Navigate to the Dashboard page") and indent the verification text beneath it — matching the pattern used in step 1.7 (lines 189–191).
+1. **[Low]** Lines 48–72 ([step 1.3](lab/tasks/required/task-3.md#13-install-the-chart-library)): No checkpoint after `npm install chart.js react-chartjs-2`. Students have no visual confirmation that the packages were installed successfully. Suggest: add expected terminal output showing packages added (e.g., "You should see output similar to: `added N packages`").
+2. **[Low]** Lines 128–165 ([step 1.6](lab/tasks/required/task-3.md#16-run-the-type-checker)): No expected output shown for a successful `npm run typecheck`. Students unfamiliar with `TypeScript` may not know what "passing" looks like. Suggest: add a note such as "If there are no type errors, the command produces no output and exits silently."
 
 ### D5. Acceptance criteria alignment
 
@@ -47,13 +36,11 @@ No issues found.
 
 ### D7. Practical usability
 
-1. **[Medium]** Lines 118–122 (step 1.5): The manual approach provides only vague bullet points ("Add a state variable", "Add buttons or links", "Render the Items table or the Dashboard component"). A beginner without AI assistance would struggle to implement this.
-   - **Suggested fix:** Provide a concrete code snippet or placeholder template for `App.tsx` with the navigation logic, similar to the TIP in step 1.4.
+No issues found.
 
 ### D8. LLM-independence
 
-1. **[Medium]** Step 1.4 (lines 70–112): The step's numbered instructions (1–3) are structured entirely around AI agent use ("Open the coding agent", "Give it a prompt", "Review the generated code"). The manual fallback (TIP at lines 102–112) provides only a minimal `Chart.js` registration snippet — it does not cover fetching data from the API, building the `chartData` object, or handling loading/error states, all of which are required by the acceptance criteria. A student who does not use an AI has no complete path to finish the component.
-   - **Suggested fix:** Either explicitly label step 1.4 as AI-required (per convention 4.16: "When a task explicitly requires AI use, mark it as a separate, clearly labeled part") or expand the TIP into a complete non-AI implementation path, or restructure the step to use Method 1 / Method 2 format.
+1. **[Medium]** Lines 106–116: The manual fallback (TIP) only covers a minimal bar chart setup (`react-chartjs-2` imports and `ChartJS.register`). Since the task requires at least two visualizations (line 77: "at least two of the following"), students working without AI lack guidance for a second chart type (line chart or table). Suggest: expand the TIP with a minimal example for at least one additional visualization type, or add a direct link to `Chart.js` documentation for line charts.
 
 ### D9. Git workflow coherence
 
@@ -65,11 +52,7 @@ No issues found.
 
 ### D11. Controlled AI steps
 
-1. **[Low]** Line 82 (step 1.4, item 2): The prompt is introduced with "Give it a prompt **like**:", making it a suggestion rather than an exact prompt. Per convention 4.20 (Controlled task environment), the prompt should be exact or templated with `<placeholders>` so the AI interaction is reproducible.
-   - **Suggested fix:** Change "Give it a prompt like:" to "Give it this prompt:" or "Use this prompt:".
-
-2. **[Low]** Line 85: The AI prompt uses the `<lab-id>` placeholder, but it is not linked to a wiki section or defined inline per convention 4.20. Line 92 provides informal guidance ("Use a default such as `lab-04`…") but does not formally explain where students find valid lab IDs.
-   - **Suggested fix:** Link `<lab-id>` to a wiki section that explains how to find valid lab IDs, or define it inline with the `(without < and >)` clarification.
+1. **[Low]** Lines 118–127 ([step 1.5](lab/tasks/required/task-3.md#15-add-navigation)): The AI path ("You can use an AI agent") has no specific prompt template, unlike step 1.4 which provides an exact prompt. The three sub-steps provide some constraint but less control than a prompt template. Suggest: add a prompt template for the AI path, similar to step 1.4.
 
 ### D12. Autochecker verifiability
 
@@ -89,7 +72,8 @@ No issues found.
 
 ### 4.2. Terminal commands
 
-No issues found.
+1. **[High]** Line 191: `npm install && npm run dev` chains two commands with different concerns (dependency installation and dev server startup) using `&&`. Per tasks.md Section 3, commands from different tools or concerns must not be chained — split into separate numbered steps.
+2. **[Low]** Line 238: `git fetch origin && git checkout <task-branch> && git pull` chains three `Git` commands with `&&`. While they all serve the goal of switching to the remote branch, tasks.md Section 3 discourages chaining — consider splitting into separate numbered steps.
 
 ### 4.3. Command Palette commands
 
@@ -133,11 +117,11 @@ No issues found.
 
 ### 4.13. Diagrams
 
-Not applicable.
+1. **[High]** Line 20: The Diagram section contains only `<!-- TODO fill in this section -->`. Per convention 1.1 (key rules for task documents), a Mermaid sequence diagram is required whenever the task involves actions across multiple actors or environments. This task spans Developer (local), VM, and GitHub — a diagram is required.
 
 ### 4.14. `<!-- TODO -->` comments
 
-Not applicable.
+Not applicable (TODOs are tracked in the dedicated section below).
 
 ### 4.15. `<!-- no toc -->` comments
 
@@ -153,11 +137,19 @@ Not applicable.
 
 ### 4.18. Inline formatting of technical terms
 
-No issues found.
+1. **[Medium]** Lines 1, 9, 46, 50, 133, 169, 288: "front-end" / "Front-end" should be "frontend" / "Frontend". Convention 4.18 states: "frontend — the front-end service; write as plain text, not inline code (not 'front-end' or 'front end')." Affected locations:
+   - Line 1: `# Dashboard Front-end` → `# Dashboard Frontend`
+   - Line 9: "to the front-end" → "to the frontend"
+   - Line 46: `[Task] Dashboard Front-end` → `[Task] Dashboard Frontend`
+   - Line 50: "the front-end directory" → "the frontend directory"
+   - Line 133: "the front-end directory" → "the frontend directory"
+   - Line 169: "the front-end directory" → "the frontend directory"
+   - Line 288: "The front-end renders" → "The frontend renders"
+2. **[Medium]** Line 181: "back-end API" should be "backend API". Convention 4.18 states: "backend — the back-end service; write as plain text, not inline code (not 'back-end' or 'back end')."
 
 ### 4.19. Steps with sub-steps
 
-No issues found.
+1. **[Low]** Lines 122, 177: "Complete these steps:" — common.md 4.19 specifies "Complete the following steps:" while tasks.md Section 3 specifies "Complete these steps:". The task follows tasks.md but diverges from common.md.
 
 ### 4.20. Placeholders in docs
 
@@ -191,26 +183,28 @@ Not applicable (uses `<your-vm-ip-address>` placeholder, not a hardcoded example
 
 ## TODOs
 
-No TODOs found.
+1. **Line 20:** `<!-- TODO fill in this section -->` — Diagram section is incomplete.
 
 ---
 
 ## Empty sections
 
-No empty sections found.
+1. **Line 18:** `<h4>Diagram</h4>` — contains only a TODO comment; no real content between this heading and the next (`<h4>Table of contents</h4>`).
 
 ---
 
 ## Summary
 
-| Category                      | Count |
-|-------------------------------|-------|
-| Conceptual — High             | 0     |
-| Conceptual — Medium           | 6     |
-| Conceptual — Low              | 4     |
-| Convention violations         | 0     |
-| TODOs                         | 0     |
-| Empty sections                | 0     |
-| **Total**                     | **10**|
+| Category | Count |
+| --- | --- |
+| Conceptual [High] | 0 |
+| Conceptual [Medium] | 1 |
+| Conceptual [Low] | 4 |
+| Convention [High] | 2 |
+| Convention [Medium] | 2 |
+| Convention [Low] | 2 |
+| TODOs | 1 |
+| Empty sections | 1 |
+| **Total** | **13** |
 
-**Overall assessment:** The task follows the template structure correctly and covers a coherent learning objective. All convention violations have been addressed. Remaining issues are conceptual: missing checkpoints for steps 1.3, 1.5, and 1.6, a checkpoint disguised as a numbered step in step 1.9, step 1.5 (Add navigation) is underspecified for students who don't use AI, and the manual fallback in step 1.4's TIP is too minimal to satisfy LLM-independence. No TODOs or empty sections were found.
+**Overall:** The task is structurally sound — it follows the task document template correctly, has an accurate ToC, proper Git workflow integration (steps 1.1, 1.2, 1.10, 1.11), and well-formatted acceptance criteria. The two highest-priority issues are: (1) the chained `npm install && npm run dev` command on line 191, which violates the "never chain different concerns" rule and must be split into separate steps; and (2) the missing Mermaid sequence diagram, which is required since the task spans local, VM, and GitHub environments. The consistent use of "front-end" / "back-end" instead of "frontend" / "backend" affects 8 locations and should be corrected throughout. The manual fallback path (TIP on lines 106–116) covers only a bar chart setup while the task requires at least two visualizations, leaving the non-AI path incomplete.
