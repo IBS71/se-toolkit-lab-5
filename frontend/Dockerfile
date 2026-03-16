@@ -6,9 +6,7 @@
 # This solution is necessary to avoid "Too many requests" errors.
 # This solution won't work outside the University network.
 FROM harbor.pg.innopolis.university/docker-hub-cache/node:22-alpine AS builder
-
 WORKDIR /app
-
 COPY package.json package-lock.json* ./
 RUN npm ci
 
@@ -24,5 +22,4 @@ RUN npm run build
 # This solution is necessary to avoid "Too many requests" errors.
 # This solution won't work outside the University network.
 FROM harbor.pg.innopolis.university/docker-hub-cache/caddy:2.11-alpine
-
 COPY --from=builder /app/dist /srv

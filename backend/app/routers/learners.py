@@ -5,10 +5,11 @@ from datetime import datetime
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.exc import IntegrityError
 from sqlmodel.ext.asyncio.session import AsyncSession
+from ..database import get_session
 
-from app.database import get_session
-from app.db.learners import read_learners, create_learner
-from app.models.learner import Learner, LearnerCreate
+from ..db.learners import read_learners, create_learner
+from ..models.learner import Learner, LearnerCreate
+
 
 router = APIRouter()
 
