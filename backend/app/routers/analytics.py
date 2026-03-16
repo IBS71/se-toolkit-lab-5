@@ -5,14 +5,19 @@ from sqlmodel import select, func, case, col
 from sqlmodel.ext.asyncio.session import AsyncSession
 from datetime import date
 
+# Импорты твоих модулей
 from ..database import get_session
 from ..models.item import ItemRecord as Item
 from ..models.learner import Learner
 from ..models.interaction import InteractionLog
+from ..auth import get_api_key  # Импортируем защиту
 
-router = APIRouter()
+# ОДНО объявление роутера с зависимостью для всего файла
+router = APIRouter(dependencies=[Depends(get_api_key)])
 
-async def get_lab_task_ids(lab_param: str, session: AsyncSession):
+# Дальше идет твой код функций...
+
+
     """Вспомогательная функция для поиска ID всех заданий конкретной лабы."""
     # Превращаем "lab-04" в "Lab 04" для поиска по заголовку
     lab_title_part = lab_param.replace("-", " ").title()

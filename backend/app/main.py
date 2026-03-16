@@ -57,3 +57,10 @@ app.include_router(
     tags=["analytics"],
     dependencies=[Depends(verify_api_key)],
 )
+app.include_router(
+    analytics.router,
+    prefix="/analytics",
+    tags=["analytics"],
+    # Защита уже есть в самом analytics.py, но можно продублировать тут
+    dependencies=[Depends(verify_api_key)], 
+)
