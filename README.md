@@ -73,3 +73,4 @@ In simple words, you should be able to say:
 ### Optional
 
 1. [Grafana dashboard](./lab/tasks/optional/task-1.md#grafana-dashboard)
+ 
